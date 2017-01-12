@@ -1,63 +1,33 @@
 package woods.admin.productmanage.model;
 
-import javax.persistence.*;
 
 /**
- * Created by MagicDeCore on 26.12.2016.
+ * Created by MagicDeCore on 06.01.2017.
  */
-
-
-@Entity
-@Table(name = "fanera")
-public class FaneraAdding {
-
-    public FaneraAdding(){
+public class FaneraBean {
+    public FaneraBean(){
 
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
-    @Column(name = "faneraname")
+
     private String faneraName;
-
-    @Column(name = "size_format")
     private String sizeFormat;
-
-    @Column(name = "depth")
     private String depth;
-
-    @Column(name = "treatment")
     private String treatment;
-
-    @Column(name = "water_resistance")
     private String water_resistance;
-
-    @Column(name = "wetness")
     private String wetness;
-
-    @Column(name = "material")
     private String material;
-
-    @Column(name = "description")
     private String description;
-
-    @Column(name = "image")
-    private String image;
-
-    @Column(name = "price")
     private int price;
 
-
-    public Long getId() {
-        return id;
+    public int getPrice() {
+        return price;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPrice(int price) {
+        this.price = price;
     }
-
     public String getFaneraName() {
         return faneraName;
     }
@@ -122,19 +92,6 @@ public class FaneraAdding {
         this.description = description;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 }
+
+

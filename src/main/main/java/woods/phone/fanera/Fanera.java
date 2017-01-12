@@ -17,15 +17,18 @@ public class Fanera implements ShopProduct{
     String water_resistance;
     String wetness;
     String material;
-    Byte image;
+    String image;
     String description;
+    int price;
+    String sort;
+
 
 
     public Fanera(){
     }
 
     protected Fanera(int id, String faneraname, String size_format, String depth, String treatment, String water_resistance, String wetness,
-                     String material, Byte image, String description){
+                     String material, String image, String description, int price, String sort){
 
         this.id = id;
         this.faneraname = faneraname;
@@ -37,6 +40,8 @@ public class Fanera implements ShopProduct{
         this.material = material;
         this.image = image;
         this.description = description;
+        this.price = price;
+        this.sort = sort;
 
     }
 
@@ -56,7 +61,7 @@ public class Fanera implements ShopProduct{
 
     @Override
     public int getPrice() {
-        return 0;
+        return price;
     }
 
     @Override
@@ -124,11 +129,11 @@ public class Fanera implements ShopProduct{
         this.material = material;
     }
 
-    public Byte getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Byte image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -138,5 +143,25 @@ public class Fanera implements ShopProduct{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getFaneraname() {
+        return faneraname;
+    }
+
+    public void setFaneraname(String faneraname) {
+        this.faneraname = faneraname;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }

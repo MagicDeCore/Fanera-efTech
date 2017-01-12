@@ -25,8 +25,10 @@ public  class FaneraMapper implements RowMapper<Fanera> {
         fanera.setWater_resistance(rs.getString("water_resistance"));
         fanera.setWetness(rs.getString("wetness"));
         fanera.setMaterial(rs.getString("material"));
-        fanera.setImage(rs.getByte("image"));
+        fanera.setImage(rs.getString("image"));
         fanera.setDescription(rs.getString("description"));
+        fanera.setPrice(rs.getInt("price"));
+        fanera.setSort(rs.getString("sort"));
 
         return fanera;
     }

@@ -50,80 +50,27 @@ public class IphoneJDBCTemplate implements IphoneDAO {
         int k2 = 0;
 
         //0
-        if (s.getChIphone5c() == 1 || s.getChIphone5s() == 1 || s.getChIphone6() == 1
-                || s.getChIphone6plus() == 1 || s.getChIphone6s() == 1 || s.getChIphone6splus() == 1 ||
-                s.getColor() != "n" || s.getMemory() != "n"
-                ) {
-            sql += " where (manufacturer is not null) ";
+        if (s.getShlef()==1    || s.getNoShlef()==1 ||
+                s.getColor()!="n" || s.getMemory()!="n"
+                )
+        {  sql += " where (model is not null) " ;
 
             // 1
-            if (s.getChIphone5c() == 1 || s.getChIphone5s() == 1 || s.getChIphone6() == 1
-                    || s.getChIphone6plus() == 1 || s.getChIphone6s() == 1 || s.getChIphone6splus() == 1) {
-                sql += "and (";
-                if (s.getChIphone5c() == 1) {
-                    sql += "model='iPhone 5c' ";
-                    k1++;
-                }
-                if (s.getChIphone5s() == 1) {
-                    if (k1 == 1) {
-                        sql += " or ";
-                        k1 = 0;
-                    }
-                    sql += "model='iPhone 5s' ";
-                    k1++;
-                }
-                if (s.getChIphone6() == 1) {
-                    if (k1 == 1) {
-                        sql += " or ";
-                        k1 = 0;
-                    }
-                    sql += "model='iPhone 6' ";
-                    k1++;
-                }
-                if (s.getChIphone6plus() == 1) {
-                    if (k1 == 1) {
-                        sql += " or ";
-                        k1 = 0;
-                    }
-                    sql += "model='iPhone 6 Plus' ";
-                    k1++;
-                }
-                if (s.getChIphone6s() == 1) {
-                    if (k1 == 1) {
-                        sql += " or ";
-                        k1 = 0;
-                    }
-                    sql += "model='iPhone 6s' ";
-                    k1++;
-                }
-                if (s.getChIphone6splus() == 1) {
-                    if (k1 == 1) {
-                        sql += " or ";
-                        k1 = 0;
-                    }
-                    sql += "model='iPhone 6s Plus' ";
-                    k1++;
-                }
-                sql += " ) ";
+            if (s.getShlef()==1    || s.getNoShlef()==1 ){
+                sql += "and (" ;
+                if (s.getShlef()==1 )   {sql += "model='model' " ; k1++;}
+                if (s.getNoShlef()==1 ) { if(k1==1) {sql +=" or ";k1=0;} sql += "model='model2' " ;k1++;}
+
+                sql += " ) " ;
             }
 
             //2
-            if (!"n".equals(s.getColor()) || !"n".equals(s.getMemory())) {
-                sql += " and ( ";
-                if (!"n".equals(s.getColor())) {
-                    sql += "color = '" + s.getColor() + "'";
-                    k2++;
-                }
-                if (!"n".equals(s.getMemory())) {
-                    if (k2 == 1) {
-                        sql += " and ";
-                        k2 = 0;
-                    }
-                    sql += "ram_memory = " + s.getMemory();
-                    k2++;
-                }
+            if (!"n".equals(s.getColor()) || !"n".equals(s.getMemory()) ) {
+                sql += " and ( " ;
+                if (    !"n".equals(s.getColor())) {sql += "color = '" + s.getColor()+"'" ; k2++;}
+                if (    !"n".equals(s.getMemory()))  { if(k2==1) {sql +=" and ";k2=0;} sql += "ram_memory = " + s.getMemory() ;k2++;}
 
-                sql += " ) ";
+                sql += " ) " ;
             }
 
         }

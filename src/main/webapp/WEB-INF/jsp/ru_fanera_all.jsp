@@ -135,7 +135,7 @@
                 <div class="widget">
                     <h1>Фильтр Продукции</h1>
 
-                    <form action="iphones_select.htm" method="GET">
+                    <form action="fanera_select.htm" method="GET">
                         <input type="hidden" name="page" value="ru-allmachine">
 
                         <div class="body bordered">
@@ -144,54 +144,20 @@
                                 <hr>
                                 <ul>
 
-                                    <%----%>
-                                    <%--<c:choose>--%>
-                                    <%--<c:when test="${chIphone5c==1}">--%>
-                                    <%--<li><input checked="checked" class="le-checkbox" type="checkbox"  name = 'checkbox_iphone5c'   value='1' /> <label>iPhone 5c</label> </li>--%>
-                                    <%--</c:when>--%>
-                                    <%--<c:otherwise>--%>
-                                    <%--<li><input  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone5c'   value='1' /> <label>iPhone 5c</label> </li>--%>
-                                    <%--</c:otherwise>--%>
-                                    <%--</c:choose>--%>
-
-                                    <%--<c:choose>--%>
-                                    <%--<c:when test="${chIphone5s==1}">--%>
-                                    <%--<li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone5s' value='1'/> <label>iPhone 5s</label> </li>--%>
-                                    <%--</c:when>--%>
-                                    <%--<c:otherwise>--%>
-                                    <%--<li><input  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone5s' value='1'/> <label>iPhone 5s</label> </li>--%>
-                                    <%--</c:otherwise>--%>
-                                    <%--</c:choose>--%>
-                                    <%--<c:choose>--%>
-                                    <%--<c:when test="${chIphone6==1}">--%>
-                                    <%--<li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6' value='1'/> <label>iPhone 6</label> </li>--%>
-                                    <%--</c:when>--%>
-                                    <%--<c:otherwise>--%>
-                                    <%--<li><input  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6' value='1'/> <label>iPhone 6</label> </li>--%>
-                                    <%--</c:otherwise>--%>
-                                    <%--</c:choose>--%>
-                                    <%--<c:choose>--%>
-                                    <%--<c:when test="${chIphone6plus==1}">--%>
-                                    <%--<li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6plus' value='1'/> <label>iPhone 6 Plus</label> </li>--%>
-                                    <%--</c:when>--%>
-                                    <%--<c:otherwise>--%>
-                                    <%--<li><input  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6plus' value='1'/> <label>iPhone 6 Plus</label> </li>--%>
-                                    <%--</c:otherwise>--%>
-                                    <%--</c:choose>--%>
                                     <c:choose>
-                                        <c:when test="${chIphone6s==1}">
-                                            <li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6s' value='1'/> <label>Шлифованная</label> </li>
+                                        <c:when test="${shlef==1}">
+                                            <li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'shlef' value='1'/> <label>Шлифованная</label> </li>
                                         </c:when>
                                         <c:otherwise>
-                                            <li><input  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6s' value='1'/> <label>Шлифованная</label> </li>
+                                            <li><input  class="le-checkbox" type="checkbox"  name = 'shlef' value='1'/> <label>Шлифованная</label> </li>
                                         </c:otherwise>
                                     </c:choose>
                                     <c:choose>
-                                        <c:when test="${chIphone6splus==1}">
-                                            <li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6splus' value='1'/> <label>Нешлифованная</label> </li>
+                                        <c:when test="${noShlef==1}">
+                                            <li><input checked="checked"  class="le-checkbox" type="checkbox"  name = 'noShlef' value='1'/> <label>Нешлифованная</label> </li>
                                         </c:when>
                                         <c:otherwise>
-                                            <li><input  class="le-checkbox" type="checkbox"  name = 'checkbox_iphone6splus' value='1'/> <label>Нешлифованная</label> </li>
+                                            <li><input  class="le-checkbox" type="checkbox"  name = 'noShlef' value='1'/> <label>Нешлифованная</label> </li>
                                         </c:otherwise>
                                     </c:choose>
 
@@ -258,7 +224,7 @@
                              <div class="price-filter">ountry" items="${listTravelX}" />--%>
 
 
-                                    <select name="color">
+                                    <select name="sort">
                                         <option disabled>Сорт</option>
 
 
@@ -269,45 +235,45 @@
                                         серый космос-->
 
                                         <c:choose>
-                                            <c:when test="${color=='n'}">
-                                                <option selected value="n">Не выбрано</option>
+                                            <c:when test="${sort=='n'}">
+                                                <option selected value="n">Любой</option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option  value="n">Не выбрано</option>
+                                                <option  value="n">Любой</option>
                                             </c:otherwise>
                                         </c:choose>
 
                                         <c:choose>
-                                            <c:when test="${color=='1.1'}">
-                                                <option selected value="1.1" > I/I  </option>
+                                            <c:when test="${sort=='I-I'}">
+                                                <option selected value="I-I" > I-I  </option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option  value="1.1" > I/I </option>
+                                                <option  value="I-I" > I-I </option>
                                             </c:otherwise>
                                         </c:choose>
 
                                         <c:choose>
-                                            <c:when test="${color=='2.2'}">
-                                                <option selected value="2.2" > II/II </option>
+                                            <c:when test="${sort=='II-II'}">
+                                                <option selected value="II-II" > II-II </option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option  value="2.2" > II/II </option>
+                                                <option  value="II-II" > II-II </option>
                                             </c:otherwise>
                                         </c:choose>
                                         <c:choose>
-                                            <c:when test="${color=='3.3'}">
-                                                <option selected value="3.3" > III/III </option>
+                                            <c:when test="${sort=='III-III'}">
+                                                <option selected value="III-III" > III-III </option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option  value="3.3" > III/III </option>
+                                                <option  value="III-III" > III-III </option>
                                             </c:otherwise>
                                         </c:choose>
                                         <c:choose>
-                                            <c:when test="${color=='4.4'}">
-                                                <option selected value="4.4" > IV/IV </option>
+                                            <c:when test="${sort=='IV-IV'}">
+                                                <option selected value="IV-IV" > IV-IV </option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option  value="4.4" > IV/IV </option>
+                                                <option  value="IV-IV" > IV-IV </option>
                                             </c:otherwise>
                                         </c:choose>
 
@@ -320,51 +286,21 @@
                                 <h2>Толщина </h2>
                                 <hr>
                                 <div id="item-count" class="le-select">
-                                    <select name="memory">
+                                    <select name="depth">
                                         <option disabled>Толщина</option>
                                         <c:choose>
-                                            <c:when test="${memory=='n'}">
-                                                <option selected value="n">Не важно</option>
+                                            <c:when test="${depth=='n'}">
+                                                <option selected value="n">Любая</option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option  value="n">Не важно</option>
+                                                <option  value="n">Любая</option>
                                             </c:otherwise>
                                         </c:choose>
 
+
+
                                         <c:choose>
-                                            <c:when test="${memory=='4'}">
-                                                <option selected value="4"> 4 мм</option>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <option  value="4"> 4 мм</option>
-                                            </c:otherwise>
-                                        </c:choose>
-                                        <c:choose>
-                                            <c:when test="${memory=='6'}">
-                                                <option selected value="6"> 6 мм</option>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <option  value="6"> 6 мм</option>
-                                            </c:otherwise>
-                                        </c:choose>
-                                        <c:choose>
-                                            <c:when test="${memory=='8'}">
-                                                <option selected value="8"> 8 мм</option>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <option  value="8"> 8 мм</option>
-                                            </c:otherwise>
-                                        </c:choose>
-                                        <c:choose>
-                                            <c:when test="${memory=='9'}">
-                                                <option selected value="9"> 9 мм</option>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <option  value="9"> 9 мм</option>
-                                            </c:otherwise>
-                                        </c:choose>
-                                        <c:choose>
-                                            <c:when test="${memory=='10'}">
+                                            <c:when test="${depth=='10'}">
                                                 <option selected value="10"> 10 мм</option>
                                             </c:when>
                                             <c:otherwise>
@@ -372,7 +308,7 @@
                                             </c:otherwise>
                                         </c:choose>
                                         <c:choose>
-                                            <c:when test="${memory=='12'}">
+                                            <c:when test="${depth=='12'}">
                                                 <option selected value="12"> 12 мм</option>
                                             </c:when>
                                             <c:otherwise>
@@ -380,21 +316,14 @@
                                             </c:otherwise>
                                         </c:choose>
                                         <c:choose>
-                                            <c:when test="${memory=='15'}">
+                                            <c:when test="${depth=='15'}">
                                                 <option selected value="15"> 15 мм</option>
                                             </c:when>
                                             <c:otherwise>
                                                 <option  value="15"> 15 мм</option>
                                             </c:otherwise>
                                         </c:choose>
-                                        <c:choose>
-                                            <c:when test="${memory=='18'}">
-                                                <option selected value="18"> 18 мм</option>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <option  value="18"> 18 мм</option>
-                                            </c:otherwise>
-                                        </c:choose>
+
 
 
                                     </select>
@@ -890,35 +819,39 @@
 
                                         <!------------***************--------------**********-->
 
-                                        <c:forEach items="${listIphone}" var="iphone">
+                                        <c:forEach items="${listFanera}" var="fanera">
                                             <div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
                                                 <div class="product-item">
 
 
                                                     <div class="ribbon red"><span>В продаже</span></div>
                                                     <div class="image">
-                                                        <img alt="" src="resources/assets/images/blank.gif" data-echo="resources/assets/images/products/${iphone.photo1}" width="246" height="186" />
+                                                        <img alt="" src="resources/assets/images/blank.gif" data-echo="resources/assets/images/products/${fanera.image}" width="246" height="186" />
                                                     </div>
                                                     <div class="body">
                                                         <!--<div class="label-discount green">-10 % sale</div>-->
                                                         <div class="title">
-                                                            <a href="iphone-${iphone.id}.htm">${iphone.manufacturer} ${iphone.model}</a>
+                                                            <a href="fanera-${fanera.id}.htm">${fanera.faneraName} ${fanera.material}</a>
                                                         </div>
-                                                        <div class="brand">${iphone.year} </div>
-                                                        <div class="brand">X*Y*Z: </div>
+
+                                                        <div class="brand">Вид обрабодки: ${fanera.treatment} </div>
+                                                        <div class="brand">Сорт: ${fanera.sort} </div>
+                                                        <div class="brand">Толщина: ${fanera.depth} </div>
+                                                        <%--<div class="brand">${fanera.price} </div>--%>
 
                                                     </div>
-                                                    <!--                                <div class="prices">
-                                    <div class="price-prev">${iphone.price}</div>
-                                    <div class="price-current pull-right">$1199.00</div>
-                                </div>-->
+                                                    <div class="prices">
+                                                        <%--<div class="price-prev">${fanera.price}</div>--%>
+                                                        <div class="price-current pull-right">${fanera.price}</div>
+                                                    </div>
+
                                                     <div class="hover-area">
                                                         <div class="add-cart-button">
-                                                            <a href="add-product-to-customer-basket.htm?id=${iphone.id}" class="le-button">в корзину</a>
+                                                            <a href="add-product-to-customer-basket.htm?id=${fanera.id}" class="le-button">в корзину</a>
                                                         </div>
                                                         <div class="wish-compare">
-                                                            <!--<a class="btn-add-to-wishlist" href="add-product-to-wish-list.htm?id=${iphone.id}">в понравившиеся</a>-->
-                                                            <a class="btn-add-to-compare" href="add-product-to-compare-list.htm?id=${iphone.id}">сравнить</a>
+                                                            <!--<a class="btn-add-to-wishlist" href="add-product-to-wish-list.htm?id=${fanera.id}">в понравившиеся</a>-->
+                                                            <a class="btn-add-to-compare" href="add-product-to-compare-list.htm?id=${fanera.id}">сравнить</a>
                                                         </div>
                                                     </div>
 
@@ -955,12 +888,6 @@
 
                                                 </c:forEach>
 
-                                                <!--                                <li class="current" ><a href="index.htm?page=1">1</a></li>
-                                                                                <li><a href="index.htm?page=2">2</a></li>
-                                                                                <li><a href="index.htm?page=3">3</a></li>
-                                                                                <li><a href="index.htm?page=4">4</a></li>
-                                                                                <li><a href="index.htm?page=5">5</a></li>-->
-                                                <!--<li><a href="#">next</a></li>-->
                                             </ul>
                                         </div>
 
@@ -982,7 +909,7 @@
 
 
 
-                                    <c:forEach items="${listIphone}" var="iphone">
+                                    <c:forEach items="${listFanera}" var="fanera">
 
 
                                         <div class="product-item product-item-holder">
@@ -991,34 +918,33 @@
                                             <div class="row">
                                                 <div class="no-margin col-xs-12 col-sm-4 image-holder">
                                                     <div class="image">
-                                                        <img alt="" src="resources/assets/images/blank.gif" data-echo="resources/assets/images/products/${iphone.photo1}"  width="246" height="186"/>
+                                                        <img alt="" src="resources/assets/images/blank.gif" data-echo="resources/assets/images/products/${fanera.image}"  width="246" height="186"/>
                                                     </div>
                                                 </div><!-- /.image-holder -->
                                                 <div class="no-margin col-xs-12 col-sm-5 body-holder">
                                                     <div class="body">
                                                         <div class="label-discount green">-10% sale</div>
                                                         <div class="title">
-                                                            <a href="iphone-${iphone.id}.htm">${iphone.manufacturer} ${iphone.model}</a>
+                                                            <a href="fanera-${fanera.id}.htm">${fanera.faneraName} ${fanera.material}</a>
                                                         </div>
-                                                        <div class="brand">${iphone.year}
+                                                        <div class="brand">${fanera.price}
                                                             <br> X*Y*Z:
                                                         </div>
                                                         <!--<div class="brand"></div>-->
                                                         <div class="excerpt">
-                                                            <p>${iphone.description}</p>
+                                                            <p>${fanera.description}</p>
                                                         </div>
                                                         <div class="addto-compare">
-                                                            <a class="btn-add-to-compare" href="add-product-to-compare-list.htm?id=${iphone.id}">add to compare list</a>
+                                                            <a class="btn-add-to-compare" href="add-product-to-compare-list.htm?id=${fanera.id}">add to compare list</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="no-margin col-xs-12 col-sm-3 price-area">
                                                     <div class="right-clmn">
-                                                        <!--                                    <div class="price-current">$1199.00</div>
-                                                                                            <div class="price-prev">$1399.00</div>-->
+
                                                         <div class="availability"><label>availability:</label><span class="available">  in stock</span></div>
-                                                        <a class="le-button" href="add-product-to-customer-basket.htm?id=${iphone.id}">add to cart</a>
-                                                        <a class="btn-add-to-wishlist" href="add-product-to-wish-list.htm?id=${iphone.id}">add to wishlist</a>
+                                                        <a class="le-button" href="add-product-to-customer-basket.htm?id=${fanera.id}">add to cart</a>
+                                                        <a class="btn-add-to-wishlist" href="add-product-to-wish-list.htm?id=${fanera.id}">add to wishlist</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -27,36 +27,6 @@ public class FaneraJDBCTemplate implements FaneraDAO {
         return faneraList;
     }
 
-//    fanera.setId(rs.getInt("id"));
-//        fanera.setName(rs.getString("name"));
-//        fanera.setSize_format(rs.getString("size_format"));
-//        fanera.setDepth(rs.getString("depth"));
-//        fanera.setTreatment(rs.getString("treatment"));
-//        fanera.setWater_resistance(rs.getString("water_resistance"));
-//        fanera.setWetness(rs.getString("wetness"));
-//        fanera.setMaterial(rs.getString("material"));
-//        fanera.setImage(rs.getString("image"));
-//        fanera.setDescription(rs.getString("description"));
-
-
-//    public void insertFanera(Fanera fanera){
-//        MapSqlParameterSource params = new MapSqlParameterSource();
-//        params.addValue("name", fanera.getName());
-//        params.addValue("size_format", fanera.getSize_format());
-//        params.addValue("depth", fanera.getDepth());
-//        params.addValue("treatment", fanera.getTreatment());
-//        params.addValue("water_resistance", fanera.getWater_resistance());
-//        params.addValue("wetness", fanera.getWetness());
-//        params.addValue("material", fanera.getMaterial());
-//        params.addValue("image", fanera.getImage());
-//        params.addValue("description", fanera.getDescription());
-//
-//        jdbcTemplateObject.execute("INSERT INTO fanera VALUES (1, " + fanera.getName() + ", "
-//                                                                    + fanera.getSize_format() + ", "
-//                                                                    + fanera.getDepth() + ", "
-//                                                                    + fanera.getTreatment() + ", "
-//                +
-//    }
 
     @Override
     public Fanera getFanera(int id) {
@@ -67,56 +37,41 @@ public class FaneraJDBCTemplate implements FaneraDAO {
 
     @Override
     public List<Fanera> listFanera(SelectFanera s) {
-        //       MapSqlParameterSource params = new MapSqlParameterSource();
+
         String sql = "SELECT * FROM fanera";
         int k1 = 0;
         int k2 = 0;
 
+
+
         //0
-        if (s.getShlef() == 1 || s.getNo_shlef() == 1 ||
-                s.getSort() != "n" || s.getDepth() != "n"
-                ) {
-            sql += " where (manufacturer is not null) ";
+        if (s.getShlef()==1    || s.getNoShlef()==1 ||
+                s.getSortFanera()!="n" || s.getDepthFanera()!="n"
+                )
+        {  sql += " where (faneraname is not null) " ;
 
             // 1
-            if (s.getShlef() == 1 || s.getNo_shlef() == 1) {
-                sql += "and (";
-                if (s.getShlef() == 1) {
-                    sql += "model='Шлифованная' ";
-                    k1++;
-                }
-                if (s.getNo_shlef() == 1) {
-                    if (k1 == 1) {
-                        sql += " or ";
-                        k1 = 0;
-                    }
-                    sql += "model='Нешлифованная' ";
-                    k1++;
-                }
+            if (s.getShlef()==1    || s.getNoShlef()==1 ){
+                sql += "and (" ;
+                if (s.getShlef()==1 )   {sql += "treatment='шлифованная' " ; k1++;}
+                if (s.getNoShlef()==1 ) { if(k1==1) {sql +=" or ";k1=0;} sql += "treatment='нешлифованная' " ;k1++;}
 
-                sql += " ) ";
+                sql += " ) " ;
             }
 
             //2
-            if (!"n".equals(s.getSort()) || !"n".equals(s.getDepth())) {
-                sql += " and ( ";
-                if (!"n".equals(s.getSort())) {
-                    sql += "color = '" + s.getDepth() + "'";
-                    k2++;
-                }
-                if (!"n".equals(s.getDepth())) {
-                    if (k2 == 1) {
-                        sql += " and ";
-                        k2 = 0;
-                    }
-                    sql += "ram_memory = " + s.getDepth();
-                    k2++;
-                }
+            if (!"n".equals(s.getSortFanera()) || !"n".equals(s.getDepthFanera())) {
+                sql += " and ( " ;
+                if (    !"n".equals(s.getSortFanera())) {sql += "sort = '" + s.getSortFanera()+"'" ; k2++;}
+                if (    !"n".equals(s.getDepthFanera()))  { if(k2==1) {sql +=" and ";k2=0;} sql += "depth = " + s.getDepthFanera() ;k2++;}
 
-                sql += " ) ";
+                sql += " ) " ;
             }
 
         }
+
+
+
         List<Fanera> listFanera = jdbcTemplateObject.query(sql, new FaneraMapper());
         return listFanera;
     }

@@ -120,7 +120,7 @@
                             <!--/.breadcrumb-item-->
 
                             <li class="breadcrumb-item current">
-                                <a href="">${iphone.manufacturer} - ${iphone.model}</a>
+                                <a href="">${fanera.faneraName} - ${fanera.material}</a>
                             </li>
                             <!--/.breadcrumb-item-->
                         </ul>
@@ -149,10 +149,10 @@
 
                 <div id="owl-single-product">
                     <div class="single-product-gallery-item" id="slide1">
-                        <a data-rel="prettyphoto" href="resources/assets/images/products/${iphone.photo1}">
+                        <a data-rel="prettyphoto" href="resources/assets/images/products/${fanera.image}">
                             <img class="img-responsive" alt=""
-                                 src="resources/assets/images/products/${iphone.photo1}"
-                                 data-echo="resources/assets/images/products/${iphone.photo1}" />
+                                 src="resources/assets/images/products/${fanera.image}"
+                                 data-echo="resources/assets/images/products/${fanera.image}" />
                             <!--src="resources/assets/images/blank.gif"-->
                         </a>
                     </div><!-- /.single-product-gallery-item -->
@@ -237,7 +237,7 @@
                 <!--<div class="star-holder inline"><div class="star" data-score="4"></div></div>-->
                 <div class="availability"><label>Availability:</label><span class="available">  in stock</span></div>
 
-                <div class="title"><a href="#">${iphone.manufacturer} - ${iphone.model}</a></div>
+                <div class="title"><a href="#">${fanera.faneraName} - ${fanera.material}</a></div>
                 <div class="brand">${iphone.year}   </div>
 
                 <div class="social-row">
@@ -295,7 +295,7 @@
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="description">
-                        <p>${iphone.description}</p>
+                        <p>${fanera.description}</p>
 
                         <!--<p>Sed consequat orci vel rutrum blandit. Nam non leo vel risus cursus porta quis non nulla. Vestibulum vitae pellentesque nunc. In hac habitasse platea dictumst. Cras egestas, turpis a malesuada mollis, magna tortor scelerisque urna, in pellentesque diam tellus sit amet velit. Donec vel rhoncus nisi, eget placerat elit. Phasellus dignissim nisl vel lectus vehicula, eget vehicula nisl egestas. Duis pretium sed risus dapibus egestas. Nam lectus felis, sodales sit amet turpis se.</p>-->
 
@@ -331,105 +331,40 @@
                         <ul class="tabled-data">
                             <li>
                                 <label>Модель </label>
-                                <div class="value">${iphone.model}</div>
+                                <div class="value">${fanera.faneraName}</div>
 
                             </li>
-                            <li>
-                                <label>Производитель</label>
-                                <div class="value">${iphone.manufacturer}</div>
-
-                            </li>
-                            <li>
-                                <label>Год </label>
-                                <div class="value">${iphone.year}</div>
-                            </li>
-
-                            <li>
-                                <label>Тип</label>
-                                <div class="value">${iphone.type}</div>
-                            </li>
-                            <li>
-                                <label>Операционная система</label>
-                                <div class="value">${iphone.os}</div>
-                            </li>
-                            <li>
-                                <label>Размер экрана</label>
-                                <div class="value">${iphone.display_size}</div>
-                            </li>
-                            <li>
-                                <label>Разрешение экрана</label>
-                                <div class="value">${iphone.display_resolution}</div>
-                            </li>
-                            <li>
-                                <label>RAM память</label>
-                                <div class="value">${iphone.ram_memory}</div> mm
-                            </li>
-                            <li>
-                                <label>Flash память</label>
-                                <div class="value">${iphone.flash_memory}</div>
-                            </li>
-                            <li>
-                                <label>Несколько СИМ</label>
-                                <div class="value">${iphone.sim_several}</div>
-                            </li>
-                            <li>
-                                <label>Камера</label>
-                                <div class="value">${iphone.camera}</div>
-                            </li>
-                            <li>
-                                <label>Количество точек матрицы </label>
-                                <div class="value">${iphone.matrix_points},  Мп</div>
-                            </li>
-                            <li>
-                                <label>Конструкция корпуса </label>
-                                <div class="value">${iphone.design_case}</div>
-                            </li>
-
                             <li>
                                 <label>Материал</label>
-                                <div class="value">${iphone.material}</div>
-                            </li>
-                            <li>
-                                <label>Цвет</label>
-                                <div class="value">${iphone.color}</div>
-                            </li>
-                            <li>
-                                <label>Формат SIM-карты  </label>
-                                <div class="value">${iphone.sim_format}</div>
-                            </li>
-                            <li>
-                                <label>Габориты</label>
-                                <div class="value">${iphone.dimensions}</div>
-                            </li>
-                            <li>
-                                <label>Вес  </label>
-                                <div class="value">${iphone.weight}</div>
-                            </li>
+                                <div class="value">${fanera.material}</div>
 
-                            <li>
-                                <label>Тип аккумулятора </label>
-                                <div class="value">${iphone.battery_type}</div>
                             </li>
                             <li>
-                                <label>Ёмкость аккумулятора</label>
-                                <div class="value">${iphone.battery_capacity}  мА·ч</div>
+                                <label>Формат листа </label>
+                                <div class="value">${fanera.size_format}</div>
                             </li>
                             <li>
-                                <label>Несъёмный аккумулятор </label>
-                                <div class="value">${iphone.battery_removable}</div>
+                                <label>Толщина листа</label>
+                                <div class="value">${fanera.depth}</div>
                             </li>
                             <li>
-                                <label>Время разговора</label>
-                                <div class="value">${iphone.time_talk}, часов</div>
+                                <label>Тип обработки</label>
+                                <div class="value">${fanera.treatment}</div>
                             </li>
                             <li>
-                                <label>Время ожидания (коректир)</label>
-                                <div class="value">${iphone.time_out}</div>
+                                <label>Водостойкость</label>
+                                <div class="value">${fanera.water_resistance}</div>
+                            </li>
+                            <li>
+                                <label>Влажность </label>
+                                <div class="value">${fanera.wetness}</div>
                             </li>
                             <li>
                                 <label>Описание</label>
-                                <div class="value">${iphone.description}</div>
+                                <div class="value">${fanera.description}</div>
                             </li>
+
+
 
 
                         </ul><!-- /.tabled-data -->

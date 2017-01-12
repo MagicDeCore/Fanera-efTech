@@ -85,12 +85,9 @@ public class ControllerIphone {
 // ModelAndView mv = new ModelAndView("hmc/allmachine");
         ModelAndView mv = new ModelAndView("ru_all_iphone");
 //
-//        int chIphone5c = 0;
-//        int chIphone5s = 0;
-//        int chIphone6 = 0;
-//        int chIphone6plus = 0;
-        int chIphone6s = 0;
-        int chIphone6splus = 0;
+
+        int shlef = 0;
+        int noShel = 0;
         String color = "n";
         String memory = "n";
         int page_nomber = 1;
@@ -102,8 +99,8 @@ public class ControllerIphone {
 //            chIphone6plus = (int) session.getAttribute("chIphone6plus");
 
 
-            chIphone6s = (int) session.getAttribute("chIphone6s");
-            chIphone6splus = (int) session.getAttribute("chIphone6splus");
+            shlef = (int) session.getAttribute("shlef");
+            noShel = (int) session.getAttribute("noShlef");
             color = (String) session.getAttribute("color");
             memory = (String) session.getAttribute("memory");
             page_nomber = (int) session.getAttribute("page_nomber");
@@ -124,8 +121,8 @@ public class ControllerIphone {
 //        select.setChIphone5s(chIphone5s);
 //        select.setChIphone6(chIphone6);
 //        select.setChIphone6plus(chIphone6plus);
-        select.setChIphone6s(chIphone6s);
-        select.setChIphone6splus(chIphone6splus);
+        select.setShlef(shlef);
+        select.setNoShlef(noShel);
         select.setColor(color);
         select.setMemory(memory);
 
@@ -148,73 +145,6 @@ public class ControllerIphone {
     }
 
 
-//    @RequestMapping(value = "/fanera", method = RequestMethod.GET)   // /iphones
-//    public ModelAndView mcf(HttpSession session) {
-//// ModelAndView mv = new ModelAndView("hmc/allmachine");
-//        ModelAndView mv = new ModelAndView("ru_fanera_all");
-////
-////        int chIphone5c = 0;
-////        int chIphone5s = 0;
-////        int chIphone6 = 0;
-////        int chIphone6plus = 0;
-//        int chIphone6s = 0;
-//        int chIphone6splus = 0;
-//        String color = "n";
-//        String memory = "n";
-//        int page_nomber = 1;
-//
-//        try {
-////            chIphone5c = (int) session.getAttribute("chIphone5c");
-////            chIphone5s = (int) session.getAttribute("chIphone5s");
-////            chIphone6 = (int) session.getAttribute("chIphone6");
-////            chIphone6plus = (int) session.getAttribute("chIphone6plus");
-//
-//            chIphone6s = (int) session.getAttribute("chIphone6s");
-//            chIphone6splus = (int) session.getAttribute("chIphone6splus");
-//            color = (String) session.getAttribute("color");
-//            memory = (String) session.getAttribute("memory");
-//            page_nomber = (int) session.getAttribute("page_nomber");
-//
-//
-//        } catch (Exception e) {
-//        }
-//
-//        String page;
-//        try {
-//            page = (String) session.getAttribute("page");
-//        } catch (Exception e) {
-//            page = "index";
-//        }
-//
-//        Select select = new Select();
-////        select.setChIphone5c(chIphone5c);
-////        select.setChIphone5s(chIphone5s);
-////        select.setChIphone6(chIphone6);
-////        select.setChIphone6plus(chIphone6plus);
-//        select.setChIphone6s(chIphone6s);
-//        select.setChIphone6splus(chIphone6splus);
-//        select.setColor(color);
-//        select.setMemory(memory);
-//
-////   List <Hmc> listHmc= hmcJDBCTemplate.listHmc(select);
-//        List<Iphone> listIphone = iphoneJDBCTemplate.listIphone(select, page_nomber);
-////     List <Iphone> listIphone = iphoneJDBCTemplate.getListIphone();
-//
-//
-////        printInFile("HMC exeption2.txt", listVmc.toString());
-//        mv.addObject("listIphone", listIphone);
-////        mv.addObject("kol_vo_page", iphoneJDBCTemplate.getKol_vo_page_itogo());
-////        mv.addObject("kol_vo_prod", iphoneJDBCTemplate.getKol_vo_product());
-//////        mv.addObject("page_nomber", page_nomber);
-////        mv.addObject("kol_vo_on_page", iphoneJDBCTemplate.getNOMBER_PRODUCTS_ON_PAGE());
-//
-//        session.setAttribute("page", "iphones");
-//
-////           printInFile("basket.txt", "Index = " + (String)session.getAttribute("page") );
-//        return mv;
-//    }
-
-    /////////
 
 
     @RequestMapping(value = "/iphones_from_any_page", method = RequestMethod.GET)
@@ -228,37 +158,28 @@ public class ControllerIphone {
     @RequestMapping(value = "/iphones_select", method = RequestMethod.GET)
     public String vmc_select(
 //                 @RequestParam(value = "page") String page,
-            @RequestParam(value = "checkbox_iphone5c", defaultValue = "0") int chIphone5c,
-            @RequestParam(value = "checkbox_iphone5s", defaultValue = "0") int chIphone5s,
-            @RequestParam(value = "checkbox_iphone6", defaultValue = "0") int chIphone6,
-            @RequestParam(value = "checkbox_iphone6plus", defaultValue = "0") int chIphone6plus,
-            @RequestParam(value = "checkbox_iphone6s", defaultValue = "0") int chIphone6s,
-            @RequestParam(value = "checkbox_iphone6splus", defaultValue = "0") int chIphone6splus,
-//                @RequestParam(value = "checkboxUsa",   defaultValue = "0") int chUsa, 
-//                @RequestParam(value = "checkboxGermany",   defaultValue = "0") int chGermany     
+            @RequestParam(value = "shlef", defaultValue = "0") int shlef,
+            @RequestParam(value = "noShlef", defaultValue = "0") int noShlef,
+
             @RequestParam(value = "color", defaultValue = "n") String color,
             @RequestParam(value = "memory", defaultValue = "n") String memory,
             HttpSession session
     ) {
 
-        session.setAttribute("chIphone5c", chIphone5c);
-        session.setAttribute("chIphone5s", chIphone5s);
-        session.setAttribute("chIphone6", chIphone6);
-        session.setAttribute("chIphone6plus", chIphone6plus);
-        session.setAttribute("chIphone6s", chIphone6s);
-        session.setAttribute("chIphone6splus", chIphone6splus);
+        session.setAttribute("shlef", shlef);
+        session.setAttribute("noShlef", noShlef);
+
         session.setAttribute("color", color);
         session.setAttribute("memory", memory);
         session.setAttribute("page_nomber", 1);
 
-        return "redirect:/dsp";
+        return "redirect:/dsp.htm";
     }
 
 
     @RequestMapping(value = "/iphone-{id}", method = RequestMethod.GET)
     public ModelAndView iphine(@PathVariable("id") int id, HttpSession session) {
 
-//     ModelAndView mv = new ModelAndView("one_iph");
         ModelAndView mv = new ModelAndView("ru_one_iphone");
         Iphone iphone = iphoneJDBCTemplate.getIphone(id);
 //        printInFile("HMC exeption2.txt", hmc.toString());

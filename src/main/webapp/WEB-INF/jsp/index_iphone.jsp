@@ -169,7 +169,7 @@
 
             <li><a href="dsp">ДСП</a></li>
             <li><a href="fanera">Фанера</a></li>
-            <%--<li><a href="<c:url value="/login" />">LOGIN</a></li>--%>
+            <li><a href="<c:url value="/login" />">LOGIN</a></li>
             <!--<li><a href="vmc.htm">IPhone 7</a></li>-->
 <!--            <li><a href="#">Horizontal machine CNC</a></li>
             -->

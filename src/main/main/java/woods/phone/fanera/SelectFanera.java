@@ -8,9 +8,9 @@ public class SelectFanera {
 
 
     int shlef;
-    int no_shlef;
-    String sort;
-    String depth;
+    int noShlef;
+    String sortFanera;
+    String depthFanera;
 
 
     public SelectFanera(){
@@ -30,28 +30,28 @@ public class SelectFanera {
         this.shlef = shlef;
     }
 
-    public int getNo_shlef() {
-        return no_shlef;
+    public int getNoShlef() {
+        return noShlef;
     }
 
-    public void setNo_shlef(int no_shlef) {
-        this.no_shlef = no_shlef;
+    public void setNoShlef(int noShlef) {
+        this.noShlef = noShlef;
     }
 
-    public String getSort() {
-        return sort;
+    public String getSortFanera() {
+        return sortFanera;
     }
 
-    public void setSort(String sort) {
-        this.sort = sort;
+    public void setSortFanera(String sortFanera) {
+        this.sortFanera = sortFanera;
     }
 
-    public String getDepth() {
-        return depth;
+    public String getDepthFanera() {
+        return depthFanera;
     }
 
-    public void setDepth(String depth) {
-        this.depth = depth;
+    public void setDepthFanera(String depthFanera) {
+        this.depthFanera = depthFanera;
     }
 
 }
